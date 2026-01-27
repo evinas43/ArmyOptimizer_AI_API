@@ -1,20 +1,25 @@
-import { Groq } from 'groq-sdk';
-import type { AIService, ChatMessage } from '../types';
+import { Groq } from "groq-sdk";
+import type { AIService, ChatMessage } from "../types";
+import { context } from "../lib/const";
 
-const groq = new Groq();
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY
+});
 
 export const groqService: AIService = {
-  name: 'groq',
+  name: "Groq",
 
   async chat(messages: ChatMessage[]) {
-    const chatCompletion = await groq.chat.completions.create({
-      messages,
+    const completion = await groq.chat.completions.create({
       model: "moonshotai/kimi-k2-instruct-0905",
       temperature: 0.6,
       max_completion_tokens: 4096,
-      top_p: 1
+      messages: [
+        { role: "system", content: context },
+        ...messages
+      ]
     });
 
-    return chatCompletion.choices[0]?.message?.content ?? '';
+    return completion.choices[0]?.message?.content ?? "";
   }
 };
