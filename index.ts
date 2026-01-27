@@ -1,7 +1,7 @@
 import { cerebrasService } from "./services/cerebras";
 import { geminiService } from "./services/gemini";
 import { groqService } from "./services/groq";
-import { openaiService } from "./services/chatGPT";
+import { openaiService } from "./services/openAi";
 import type { AIService, ChatMessage } from "./types";
 
 const services: AIService[] = [

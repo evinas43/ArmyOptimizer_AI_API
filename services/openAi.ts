@@ -3,7 +3,7 @@ import type { AIService, ChatMessage } from "../types";
 import { context } from "../lib/const";
 
 const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY!
 });
 
 export const openaiService: AIService = {
