@@ -1,12 +1,15 @@
+import { Chat } from "groq-sdk/resources.mjs";
 import { cerebrasService } from "./services/cerebras";
 import { geminiService } from "./services/gemini";
 import { groqService } from "./services/groq";
+import { openaiService } from "./services/chatGPT";
 import type { AIService, ChatMessage } from "./types";
 
 const services: AIService[] = [
   groqService,
   cerebrasService,
-  geminiService
+  geminiService,
+  openaiService
 ];
 
 let currentServiceIndex = 0;
