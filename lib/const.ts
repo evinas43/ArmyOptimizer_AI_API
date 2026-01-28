@@ -26,7 +26,7 @@ CONOCIMIENTO CLAVE:
 REGLAS CRÍTICAS (OBLIGATORIAS):
 - NO inventes, estimes ni infieras nombres
 - NO traduzcas nombres ni mezcles idiomas
-- NO adaptes, reformules ni embellezcas nombres
+- NO adaptes,no acortes, reformules ni embellezcas nombres
 - USA EXCLUSIVAMENTE nombres CANÓNICOS EXACTOS en INGLÉS
 - Los nombres deben coincidir CARÁCTER POR CARÁCTER con la wiki
 - Si no estás 100% seguro de un nombre, NO lo uses

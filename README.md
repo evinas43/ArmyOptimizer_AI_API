@@ -1,33 +1,47 @@
 # api_ia
 
-To install dependencies:
+API for the **ArmyOptimizer** project, built using **Bun**.
+
+To install dependencies⚡:
 
 ```bash
 bun install
 ```
 
-To run:
+To run🚀:
 
 ```bash
 bun run index.ts
 ```
-Example consult:
 ```bash
-(Invoke-WebRequest `
-  -Uri http://localhost:3000/chat `
+bun run dev
+```
+
+```bash
+bun run start
+```
+
+The service is uploaded on railway🌐: 
+
+```bash
+armyoptimizeraiapi-production.up.railway.app
+```
+
+Request Example 📡:
+```bash
+Invoke-WebRequest `
+  -Uri https://armyoptimizeraiapi-production.up.railway.app/chat `
   -Method POST `
   -UseBasicParsing `
   -Headers @{ "Content-Type" = "application/json" } `
-  -Body '{ 
-    "messages": [ 
-      { 
-        "role": "user", 
-        "content": "Resuelve Fibonacci en JavaScript" 
-      } 
-    ] 
+  -Body '{
+    "messages": [
+      {
+        "role": "user",
+        "content": "Town Hall: 15. Troops: x10 dragons, x3 dragon riders. Spells: freeze, invisibilities. Heroes: Archer Queen, Grand Warden, Barbarian King, Royal Champion. Siege Machine: Battle Blimp. Objective: War."
+      }
+    ]
   }'
-).Content
-
 ```
 
 
