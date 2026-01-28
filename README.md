@@ -1,4 +1,4 @@
-# api_ia
+# ArmyOptimizer API usage
 
 API for the **ArmyOptimizer** project, built using **Bun**.
 
