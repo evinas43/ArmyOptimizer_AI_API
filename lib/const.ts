@@ -76,8 +76,10 @@ Respond ONLY with valid JSON using the EXACT structure below:
   "heroLoadouts": [
     {
       "heroName": "<Official Hero Name in English>",
-      "ability1": "<Official Equipment Name in English>",
-      "ability2": "<Official Equipment Name in English>",
+      "equipment": [
+        "<Official Equipment Name in English>",
+        "<Official Equipment Name in English>"
+      ],
       "petName": "<Official Pet Name in English>"
     }
   ],
@@ -87,9 +89,9 @@ Respond ONLY with valid JSON using the EXACT structure below:
 
 ADDITIONAL FORMAT RULES:
 - Each hero MUST have EXACTLY two equipment pieces
-- The "equipment" array MUST always have length 2
-- DO NOT repeat equipment
-- Use ONLY the key "equipment"
+- The "equipment" array MUST always contain EXACTLY 2 elements
+- DO NOT repeat equipment within the same hero
+- Use ONLY the key "equipment" (ability1 and ability2 are NOT allowed)
 - Use OFFICIAL CANONICAL NAMES IN ENGLISH ONLY
 - The JSON MUST be strictly valid and parseable
 - Do NOT include text before or after the JSON
