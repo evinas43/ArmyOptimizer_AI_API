@@ -83,7 +83,11 @@ Respond ONLY with valid JSON using the EXACT structure below:
       "petName": "<Official Pet Name in English>"
     }
   ],
-  "siegeMachine": "<Official Siege Machine Name in English>",
+  "siegeMachines": [
+  {
+    "name": "<Official Siege Machine Name in English>",
+    "quantity": <number>
+  }],
   "aiNotes": "<Competitive explanation strictly focused on hero optimization and synergy>"
 }
 
@@ -95,5 +99,8 @@ ADDITIONAL FORMAT RULES:
 - Use OFFICIAL CANONICAL NAMES IN ENGLISH ONLY
 - The JSON MUST be strictly valid and parseable
 - Do NOT include text before or after the JSON
+- siegeMachines MUST be an array, NEVER a string
+- You can return multiple siege machines if optimal
+- quantity MUST be >= 1
 - Do NOT use markdown
 `;
