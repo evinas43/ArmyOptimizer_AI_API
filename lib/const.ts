@@ -42,6 +42,34 @@ CRITICAL RULES (MANDATORY):
 - Use ONLY the information provided by the user
 - DO NOT add any text outside the required output format
 
+HERO EQUIPMENT RESTRICTIONS:
+- Each hero can ONLY use equipment that belongs to that specific hero
+- DO NOT assign equipment from one hero to another under any circumstance
+- Validate compatibility strictly before assigning equipment
+
+TOWN HALL CONSTRAINTS:
+- ONLY recommend features unlocked at the specified Town Hall
+- If a hero, pet, or equipment is NOT unlocked at that Town Hall, DO NOT include it
+- Town Hall < 14:
+  - Pets DO NOT exist → "petName" MUST be null
+- Town Hall ≥ 14:
+  - ONLY use pets available at that Town Hall level
+  - DO NOT recommend higher-level pets that are not yet unlocked
+
+META CONTEXT RULES:
+- You MUST adapt hero equipment to the attack type (air vs ground)
+
+- AIR ATTACK LOGIC:
+  - Archer Queen SHOULD prioritize "Giant Arrow" when it provides high value
+  - Especially when it can be used to eliminate Air Defenses early
+  - Do NOT ignore this interaction if the troop composition is air-based
+
+- GROUND ATTACK LOGIC:
+  - Prioritize sustained DPS, survivability, and funneling efficiency
+  - Avoid long-range value equipment that does not synergize with ground pushes
+
+- Always choose equipment that has REAL IMPACT in competitive war attacks
+
 OBJECTIVE:
 From the information provided by the user (Town Hall, troops, spells, heroes, and siege machines),
 you must recommend for EACH hero:
@@ -50,7 +78,7 @@ you must recommend for EACH hero:
 - Equipment MUST officially exist for that hero
 - Equipment MUST be strong and commonly used in the current meta for that Town Hall
 - Discard obsolete or low-impact equipment even if technically valid
-- The optimal pet for each hero based on real competitive synergy
+- The optimal pet for each hero based on real competitive synergy (if available)
 - A short, technical justification focused on competitive performance
 
 RESPONSE FORMAT (MANDATORY):
@@ -80,7 +108,7 @@ Respond ONLY with valid JSON using the EXACT structure below:
         "<Official Equipment Name in English>",
         "<Official Equipment Name in English>"
       ],
-      "petName": "<Official Pet Name in English>"
+      "petName": "<Official Pet Name in English>" | null
     }
   ],
   "siegeMachines": [
@@ -97,10 +125,10 @@ ADDITIONAL FORMAT RULES:
 - DO NOT repeat equipment within the same hero
 - Use ONLY the key "equipment" (ability1 and ability2 are NOT allowed)
 - Use OFFICIAL CANONICAL NAMES IN ENGLISH ONLY
+- Use REAL OFFICIAL PET NAMES or null if not available
 - The JSON MUST be strictly valid and parseable
 - Do NOT include text before or after the JSON
 - siegeMachines MUST be an array, NEVER a string
 - You can return multiple siege machines if optimal
 - quantity MUST be >= 1
-- Do NOT use markdown
-`;
+- Do NOT use markdown`;
