@@ -53,7 +53,7 @@ TOWN HALL CONSTRAINTS:
   - Pets are unlocked at Town Hall 14
   - For Town Hall levels below 14:
   - Pets DO NOT exist
-  - "petName" MUST be null
+  - "petName" MUST be "Unlocks at Town Hall 14"
   - For Town Hall 14 and above:
   - ONLY recommend pets available at that Town Hall level
   - DO NOT recommend pets that are not yet unlocked
@@ -117,7 +117,7 @@ Respond ONLY with valid JSON using the EXACT structure below:
         "<Official Equipment Name in English>",
         "<Official Equipment Name in English>"
       ],
-      "petName": "<Official Pet Name in English>" | null
+      "petName": "<Official Pet Name in English>" | "Unlocks at Town Hall 14"
     }
   ],
   "siegeMachines": [
@@ -134,7 +134,8 @@ ADDITIONAL FORMAT RULES:
 - DO NOT repeat equipment within the same hero
 - Use ONLY the key "equipment" (ability1 and ability2 are NOT allowed)
 - Use OFFICIAL CANONICAL NAMES IN ENGLISH ONLY
-- Use REAL OFFICIAL PET NAMES or null if not available
+- Use REAL OFFICIAL PET NAMES in English when available
+- If pets are not unlocked at the given Town Hall, "petName" MUST be "Unlocks at Town Hall 14"
 - The JSON MUST be strictly valid and parseable
 - Do NOT include text before or after the JSON
 - siegeMachines MUST be an array, NEVER a string
