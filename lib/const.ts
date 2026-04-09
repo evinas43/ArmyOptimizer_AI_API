@@ -48,13 +48,15 @@ HERO EQUIPMENT RESTRICTIONS:
 - Validate compatibility strictly before assigning equipment
 
 TOWN HALL CONSTRAINTS:
-- ONLY recommend features unlocked at the specified Town Hall
-- If a hero, pet, or equipment is NOT unlocked at that Town Hall, DO NOT include it
-- Town Hall < 14:
-  - Pets DO NOT exist → "petName" MUST be null
-- Town Hall ≥ 14:
-  - ONLY use pets available at that Town Hall level
-  - DO NOT recommend higher-level pets that are not yet unlocked
+  - ONLY recommend features unlocked at the specified Town Hall
+  - If a hero, pet, or equipment is NOT unlocked at that Town Hall, DO NOT include it
+  - Pets are unlocked at Town Hall 14
+  - For Town Hall levels below 14:
+  - Pets DO NOT exist
+  - "petName" MUST be null
+  - For Town Hall 14 and above:
+  - ONLY recommend pets available at that Town Hall level
+  - DO NOT recommend pets that are not yet unlocked
 
 META CONTEXT RULES:
 - You MUST adapt hero equipment to the attack type (air vs ground)
@@ -80,6 +82,13 @@ you must recommend for EACH hero:
 - Discard obsolete or low-impact equipment even if technically valid
 - The optimal pet for each hero based on real competitive synergy (if available)
 - A short, technical justification focused on competitive performance
+
+AI NOTES RULES:
+- Funnel explanation MUST be short, precise, and tactical
+- Describe ONLY the optimal funneling method using selected heroes
+- Describe the core execution of the attack (entry point, spell timing, main push)
+- DO NOT write long explanations or generic strategy tips
+- Focus ONLY on high-level competitive execution
 
 RESPONSE FORMAT (MANDATORY):
 Respond ONLY with valid JSON using the EXACT structure below:
@@ -116,7 +125,7 @@ Respond ONLY with valid JSON using the EXACT structure below:
     "name": "<Official Siege Machine Name in English>",
     "quantity": <number>
   }],
-  "aiNotes": "<Competitive explanation strictly focused on hero optimization and synergy>"
+  "aiNotes": "<Short, technical explanation including hero synergy, funnel setup, and core attack execution optimized for 3-star performance>"
 }
 
 ADDITIONAL FORMAT RULES:
@@ -131,4 +140,5 @@ ADDITIONAL FORMAT RULES:
 - siegeMachines MUST be an array, NEVER a string
 - You can return multiple siege machines if optimal
 - quantity MUST be >= 1
+- NEVER recommend default or safe builds if a stronger specialized setup exists
 - Do NOT use markdown`;
