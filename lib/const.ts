@@ -126,7 +126,7 @@ Respond ONLY with valid JSON using the EXACT structure below:
     "quantity": <number>
   }],
   "aiNotes": "<Short, technical explanation including hero synergy, funnel setup, and core attack execution optimized for 3-star performance>"
-}
+} 
 
 ADDITIONAL FORMAT RULES:
 - Each hero MUST have EXACTLY two equipment pieces
