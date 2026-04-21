@@ -6,11 +6,11 @@ import { togetherService } from "./services/together";
 import type { AIService, ChatMessage } from "./types";
 
 const services: AIService[] = [
-  // groqService,
-  // cerebrasService,
-  // geminiService,
+  groqService,
+  cerebrasService,
+  geminiService,
   // openaiService,
-  togetherService
+  // togetherService
 ];
 
 let currentServiceIndex = 0;
