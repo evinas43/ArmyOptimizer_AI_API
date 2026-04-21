@@ -2,13 +2,15 @@ import { cerebrasService } from "./services/cerebras";
 import { geminiService } from "./services/gemini";
 import { groqService } from "./services/groq";
 import { openaiService } from "./services/openAi";
+import { togetherService } from "./services/together";
 import type { AIService, ChatMessage } from "./types";
 
 const services: AIService[] = [
-  groqService,
-  cerebrasService,
-  geminiService,
-  openaiService
+  // groqService,
+  // cerebrasService,
+  // geminiService,
+  // openaiService,
+  togetherService
 ];
 
 let currentServiceIndex = 0;
