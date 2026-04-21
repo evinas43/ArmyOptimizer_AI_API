@@ -19,19 +19,10 @@ export const geminiService: AIService = {
 
     const response = await genAI.models.generateContent({
       model: "gemini-3-flash-preview",
-      contents: [
-        {
-          role: "user",
-          parts: [{ text: context }]
-        },
-        ...messages.map(m => ({
-          role: m.role === "assistant" ? "model" : "user",
-          parts: [{ text: m.content }]
-        }))
-      ],
+      contents: prompt,
       config: {
-        maxOutputTokens: 500,
-        temperature: 0.5
+        maxOutputTokens: 400, 
+        temperature: 0.6
       }
     });
 
