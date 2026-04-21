@@ -18,7 +18,7 @@ export const geminiService: AIService = {
     ].join("\n\n");
 
     const response = await genAI.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-1.5-flash",
       contents: prompt
     });
 
