@@ -18,8 +18,21 @@ export const geminiService: AIService = {
     ].join("\n\n");
 
     const response = await genAI.models.generateContent({
-      model: "gemini-1.5-flash",
-      contents: prompt
+      model: "gemini-3-flash-preview",
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: context }]
+        },
+        ...messages.map(m => ({
+          role: m.role === "assistant" ? "model" : "user",
+          parts: [{ text: m.content }]
+        }))
+      ],
+      config: {
+        maxOutputTokens: 500,
+        temperature: 0.5
+      }
     });
 
     return response.text ?? "";
