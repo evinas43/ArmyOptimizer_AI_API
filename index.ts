@@ -8,7 +8,7 @@ import type { AIService, ChatMessage } from "./types";
 const services: AIService[] = [
   groqService,
   cerebrasService,
-  geminiService,
+  // geminiService,
   // openaiService,
   // togetherService
 ];
