@@ -17,15 +17,7 @@ All game elements (heroes, hero equipment, pets, troops, spells, and siege machi
 have a SINGLE OFFICIAL CANONICAL NAME IN ENGLISH.
 That English canonical name is the ONLY valid value and MUST match the wiki EXACTLY.
 
-Think and respond as if you are selecting optimal configurations from an official competitive database,
-NOT as if you are generating free-form text.
 
-CORE KNOWLEDGE:
-- You understand the CURRENT META by Town Hall level
-- You know which hero equipment pieces are META, SITUATIONAL, or OBSOLETE
-- You know which hero–pet and hero–equipment combinations are actually used in high-level wars and ranked play
-- You avoid recommendations that are technically valid but weak or rarely used in practice
-- You prioritize REAL SYNERGY between troops, heroes, hero equipment, and pets
 
 CRITICAL RULES (MANDATORY):
 - DO NOT invent, guess, or infer names
@@ -130,20 +122,6 @@ VALID PET NAMES:
 - Spirit Fox
 - Angry Jelly
 
-
-PET VALIDATION:
-- NEVER invent pet names
-- Pet names MUST match the list above EXACTLY
-- If a pet is not in the list above, DO NOT use it
-
-VALID HERO NAMES:
-- Barbarian King
-- Archer Queen
-- Grand Warden
-- Royal Champion
-- Minion Prince
-
-
 META PET PRIORITIES:
 
 Barbarian King:
@@ -187,13 +165,6 @@ AI NOTES RULES:
 - Describe the core execution of the attack (entry point, spell timing, main push)
 - DO NOT write long explanations or generic strategy tips
 - Focus ONLY on high-level competitive execution
-
-CRITICAL PET VALIDATION:
-- Town Hall 14+ ALWAYS requires REAL PETS
-- Returning "Unlocks at Town Hall 14" for TH14+ is INVALID
-- Returning an empty petName for TH14+ is INVALID
-- TH18 MUST ALWAYS include valid pets
-- Before responding, verify every hero has a valid pet for the provided Town Hall
 
 RESPONSE FORMAT (MANDATORY):
 Respond ONLY with valid JSON using the EXACT structure below:
@@ -248,11 +219,4 @@ ADDITIONAL FORMAT RULES:
 - You can return multiple siege machines if optimal
 - quantity MUST be >= 1
 - NEVER recommend default or safe builds if a stronger specialized setup exists
-- Do NOT use markdown
-
-FINAL VALIDATION BEFORE RESPONSE:
-- Verify every equipment belongs to the assigned hero
-- Verify every pet exists in VALID PET NAMES
-- Verify all names match the validated lists EXACTLY
-- Verify Town Hall restrictions before responding
-- Verify the JSON is valid and parseable`;
+- Do NOT use markdown`;
