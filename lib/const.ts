@@ -130,12 +130,6 @@ VALID PET NAMES:
 - Spirit Fox
 - Angry Jelly
 
-TH14+ PET ENFORCEMENT:
-- If townHall >= 14:
-  - petName MUST be one of the VALID PET NAMES listed above
-  - Any other value is INVALID
-  - Strings like "Unlocks at Town Hall 14" are INVALID
-  - Strings like "Pets unavailable before Town Hall 14" are INVALID
 
 PET VALIDATION:
 - NEVER invent pet names
@@ -149,10 +143,6 @@ VALID HERO NAMES:
 - Royal Champion
 - Minion Prince
 
-HERO VALIDATION:
-- NEVER invent hero names
-- Hero names MUST match the list above EXACTLY
-- If a hero is not in the list above, DO NOT use it
 
 META PET PRIORITIES:
 
@@ -176,58 +166,9 @@ Minion Prince:
 - Electro Owl
 - Frosty
 
-
-HERO EQUIPMENT COMPATIBILITY:
-
-Barbarian King:
-- Barbarian Puppet
-- Rage Vial
-- Earthquake Boots
-- Giant Gauntlet
-- Spiky Ball
-- Vampstache
-
-Archer Queen:
-- Archer Puppet
-- Invisibility Vial
-- Giant Arrow
-- Healer Puppet
-- Frozen Arrow
-- Magic Mirror
-
-Grand Warden:
-- Eternal Tome
-- Life Gem
-- Rage Gem
-- Healing Tome
-- Fireball
-- Lavaloon Puppet
-
-Royal Champion:
-- Seeking Shield
-- Royal Gem
-- Hog Rider Puppet
-- Haste Vial
-- Rocket Spear
-- Electro Boots
-
-Minion Prince:
-- Dark Orb
-- Henchmen Puppet
-- Metal Pants
-
-EQUIPMENT COMPATIBILITY VALIDATION:
-- A hero can ONLY use equipment listed under that specific hero
-- Cross-hero equipment assignments are INVALID
-
-
-STRICT VALIDATION:
-- NEVER invent equipment names
-- NEVER modify equipment names
-- NEVER create possessive names
-- NEVER generate names like "King's Sword" or "Queen's Shield"
-- Equipment names MUST match the list above EXACTLY
-- If an equipment is not in the list above, DO NOT use it
+EQUIPMENT VALIDATION:
+- Use ONLY equipment names from the validated lists above
+- NEVER invent or modify equipment names
 
 OBJECTIVE:
 From the information provided by the user (Town Hall, troops, spells, heroes, and siege machines),
