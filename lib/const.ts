@@ -48,15 +48,22 @@ HERO EQUIPMENT RESTRICTIONS:
 - Validate compatibility strictly before assigning equipment
 
 TOWN HALL CONSTRAINTS:
-  - ONLY recommend features unlocked at the specified Town Hall
-  - If a hero, pet, or equipment is NOT unlocked at that Town Hall, DO NOT include it
-  - Pets are unlocked at Town Hall 14
-  - For Town Hall levels below 14:
-  - Pets DO NOT exist
-  - "petName" MUST be "Unlocks at Town Hall 14"
-  - For Town Hall 14 and above:
-  - ONLY recommend pets available at that Town Hall level
-  - DO NOT recommend pets that are not yet unlocked
+- ONLY recommend features unlocked at the specified Town Hall
+- If a hero, pet, troop, spell, siege machine, or equipment is NOT unlocked at that Town Hall, DO NOT include it
+
+PET RULES (STRICT):
+- Pets exist ONLY for Town Hall 14 and above
+
+- For Town Hall 13 and below:
+  - pets are unavailable
+  - "petName" MUST be exactly "Pets unavailable before Town Hall 14"
+
+- For Town Hall 14 and above:
+  - EVERY hero MUST receive a REAL OFFICIAL PET NAME
+  - NEVER return "Pets unavailable before Town Hall 14"
+  - NEVER return "Unlocks at Town Hall 14"
+  - NEVER leave petName empty
+  - ONLY use pets officially available at the provided Town Hall level
 
 META CONTEXT RULES:
 - You MUST adapt hero equipment to the attack type (air vs ground)
@@ -117,7 +124,7 @@ Respond ONLY with valid JSON using the EXACT structure below:
         "<Official Equipment Name in English>",
         "<Official Equipment Name in English>"
       ],
-      "petName": "<Official Pet Name in English>" | "Pets unlock at Town Hall 14" 
+      "petName": "<Official Pet Name in English>" | "Pets unavailable before Town Hall 14" 
     }
   ],
   "siegeMachines": [
@@ -135,7 +142,8 @@ ADDITIONAL FORMAT RULES:
 - Use ONLY the key "equipment" (ability1 and ability2 are NOT allowed)
 - Use OFFICIAL CANONICAL NAMES IN ENGLISH ONLY
 - Use REAL OFFICIAL PET NAMES in English when available
-- If pets are not unlocked at the given Town Hall, "petName" MUST be "Unlocks at Town Hall 14"
+- If the Town Hall is below 14, "petName" MUST be "Pets unavailable before Town Hall 14"
+- If the Town Hall is 14 or higher, "petName" MUST ALWAYS contain a REAL OFFICIAL PET NAME
 - The JSON MUST be strictly valid and parseable
 - Do NOT include text before or after the JSON
 - siegeMachines MUST be an array, NEVER a string
