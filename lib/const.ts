@@ -117,7 +117,7 @@ Respond ONLY with valid JSON using the EXACT structure below:
         "<Official Equipment Name in English>",
         "<Official Equipment Name in English>"
       ],
-      "petName": "<Official Pet Name in English>" | "Unlocks at Town Hall 14"
+      "petName": "<Official Pet Name in English>" | "Pets unlock at Town Hall 14" 
     }
   ],
   "siegeMachines": [
